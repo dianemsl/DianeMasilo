@@ -1,0 +1,746 @@
+
+@font-face {
+    font-family: "Main" ;
+    src: url(font/Univers\ Italic\ copy.ttf)
+}
+
+@font-face {
+    font-family: "Name" ;
+    src: url(font/Avara-BoldItalic\ copy.otf)
+}
+
+@font-face {
+  font-family: "Name-two" ;
+  src: url(font/Univers\ Regular\ copy.ttf)
+}
+
+@font-face {
+    font-family: "Title" ;
+    src: url(font/RobotoCondensed-VariableFont_wght.ttf)
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+
+
+html, body{
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+}
+
+/*NAVIGATION BAR*/
+.navigation{
+    width: 100%;
+    padding-top:0.6%;
+    padding-bottom: 0.5%;
+    z-index: 3;
+    background-color:white;
+    position: fixed;
+    top: 0px;
+    overflow-y: hidden;
+    /*border-bottom: 0.5px solid black;*/
+}
+
+.navigation-item{
+  display: flex;
+  justify-content: center;
+  gap: 20vw;
+  
+}
+
+.navigation-item a{
+   font-size: 1.1rem;
+   letter-spacing: 1px;
+   font-family: Name-two;
+   text-decoration: none;
+   color: black;
+   background: linear-gradient(currentColor 0 0) 
+   bottom left/
+   var(--underline-width, 0%) 0.12em
+   no-repeat;
+   transition: background-size 0.35s;
+   word-wrap: normal;
+   text-transform: uppercase;
+   line-height: 1.5;
+
+
+}
+
+.navigation-item a:hover{
+    cursor: pointer;
+    color:rgb(20, 50, 245);
+    --underline-width: 100%;
+}
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .section {
+    height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+  }
+ 
+/*INTRO*/
+
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    z-index:10;
+  }
+  
+  .images-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; 
+    margin-top: 2rem;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+    width: 100%;
+    font-family: Name;
+    letter-spacing: 0.05rem;
+    line-height: 1.3;
+  }
+
+  
+  .me, .me2{
+    width: 47%;
+    height: auto;
+    filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+  }
+/*PRINT-MARKS-*/
+
+.print-marks-one, .print-marks-two,
+.print-marks-three, .print-marks-four {
+  display: flex;
+  position: fixed;
+  width: 2.5%;
+  height: auto;
+}
+
+  .print-marks-one{
+    bottom: 2%;
+    right: 0;
+    margin: 0.5%
+    
+  }
+  .print-marks-two{
+    bottom: 2%;
+    left: 0;
+    margin: 0.5%
+    
+  }
+  .print-marks-three{
+    top:5%;
+    right: 0;
+    margin: 0.5%
+  }
+  .print-marks-four{
+    top: 5%;
+    left: 0;
+    margin: 0.5%
+  }
+
+  /*PRINT-MARKS-CIRCLES*/
+
+  .print-marks-five, .print-marks-six,
+  .print-marks-seven, .print-marks-eight {
+    display: flex;
+    position: fixed;
+    width: 1.5%;
+    height: auto;
+  }
+
+  .print-marks-five{
+    top: 5.5%;
+    left: 3%;
+  }
+
+  .print-marks-six{
+    top: 5.5%;
+    right: 3%;
+  }
+
+  .print-marks-seven{
+    bottom: 2.5%;
+    left: 3%;
+  }
+  .print-marks-eight{ 
+    bottom: 2%;
+    right: 3%;
+  }
+
+  .scroll-down-for-more{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    bottom: 10vh;
+  }
+
+  .scroll-text{
+    font-family: Name-two;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color:rgb(20, 50, 245);
+  }
+
+  #drag-me {
+    cursor: grab;           
+  }
+  
+  #drag-me:active {
+    cursor: grabbing;        
+  }
+  
+/*PROJECTS*/
+
+.projects{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    z-index:10;
+}
+
+.image-hover-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    user-select: none;
+    will-change: transform;
+  }
+
+.image-hover-container img {
+    position: absolute;
+    width: fit-content;
+    height: auto;
+    transition: opacity 0.15s ease;
+    display: block;   
+    filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64)); 
+}
+
+.image-hover-container:hover{
+  cursor: grab;
+}
+
+.projects div:nth-child(5){
+  width: 18%;
+}
+
+/*PROJECT-ONE*/
+
+.project-one-pic-one{
+    position: absolute;
+    width: 100%;
+    max-width: 18%;
+    top: -20vh;
+    opacity: 1;
+    right: 30vw;
+    transition: opacity 0.2s ease;
+}
+
+.project-one-pic-two{
+    position: absolute;
+    width: 100%;
+    max-width: 18%;
+    top: -20vh;
+    opacity: 0;
+    right: 30vw;
+}
+
+.image-hover-container:hover .project-one-pic-one {
+    opacity: 0;
+    cursor: grab;
+}
+
+.image-hover-container:hover .project-one-pic-two {
+    opacity: 1;
+    cursor: grab;
+    user-select: none;
+    filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64)); 
+}
+
+/*PROJECT-TWO*/
+
+.project-two-pic-one{
+    position: absolute;
+    width: 100%;
+    max-width: 37%;
+    height: auto;
+    top: -40vh;
+    left: 26vw;
+    opacity: 1;
+    margin-right: 5vw;
+}
+
+.project-two-pic-two{
+    position: absolute;
+    width: 100%;
+    max-width: 37%;
+    height: auto;
+    top: -40vh;
+    left: 26vw;
+    opacity: 0;
+}
+
+.image-hover-container:hover .project-two-pic-one {
+    opacity: 0;
+    cursor: grab;
+    user-select: none;
+}
+
+.image-hover-container:hover .project-two-pic-two {
+    opacity: 1;
+    cursor: grab;
+    user-select: none;
+    filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+}
+
+/*PROJECT-THREE*/
+
+.project-three-pic-one{
+    position: relative;
+    width: 100%;
+    max-width: 18%;
+    height: auto;
+    top: -30vh;
+    right:38vw;
+    opacity: 1;
+    margin-right: 15vw;
+}
+
+.project-three-pic-two{
+    position: relative;
+    width: 100%;
+    max-width: 18%;
+    height: auto;
+    top: -30vh;
+    right:38vw;
+    opacity: 0;
+    margin-right: 15vw;
+}
+
+.image-hover-container:hover .project-three-pic-one {
+    opacity: 0;
+    user-select: none;
+    cursor: grab;
+}
+
+.image-hover-container:hover .project-three-pic-two {
+    opacity: 1;
+    cursor: grab;
+    user-select: none;
+    filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+}
+.title {
+  position: relative;
+  font-size: 50px;
+  color:white;
+  font-family: Name-two;
+  text-transform: uppercase;
+  margin: 1%;
+}
+
+/*PROJECT-FOUR*/
+
+.project-four-pic-one{
+    position: relative;
+    width: 100%;
+    max-width: 19%;
+    height: auto;
+    opacity: 1;
+    top:-10vh;
+    left: 60vw;
+
+}
+
+.project-four-pic-two{
+    position: relative;
+    width: 100%;
+    max-width: 19%;
+    height: auto;
+    opacity: 0;
+    top:-10vh;
+    left: 60vw;
+
+}
+
+.image-hover-container:hover .project-four-pic-one {
+    opacity: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+.image-hover-container:hover .project-four-pic-two {
+    opacity: 1;
+    cursor: grab;
+    filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+    user-select: none;
+}
+
+.project-five-pic-one{
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+  left:25vw;
+  top: 1.5vh;
+  z-index: 10;
+}
+
+.project-five-pic-two{
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  left:25vw;
+}
+
+.project-five-pic-two:hover{
+  cursor: grab;
+}
+
+.image-hover-container:hover .project-five-pic-one {
+  opacity: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.image-hover-container:hover .project-five-pic-two {
+  opacity: 1;
+  cursor: grab;
+  filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+  user-select: none;
+}
+
+
+/*ABOUT*/
+
+.about-description{
+  position: relative;
+  float: right;
+  margin-right: 8%;
+}
+
+.description-one{
+  position: relative;
+  width : 100%;
+  font-size: 1.3rem;
+  font-family: Name;
+  line-height: 1.3;
+}
+
+.resume{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  bottom: 11vh;
+  z-index: 10;
+  
+}
+
+.resume-button{ 
+  font-family: Name-two;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color:rgb(20, 50, 245);
+  padding: 0.5%;
+  border-radius: 1px;
+  text-decoration: none;
+  border: none; 
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  opacity: 1;
+  background: linear-gradient(currentColor 0 0) 
+bottom left/
+var(--underline-width, 0%) 0.12em
+no-repeat;
+transition: background-size 0.35s;
+  justify-content: center;
+}
+
+.resume-button:hover{
+cursor: pointer;
+--underline-width: 100%;
+}
+
+.letterboxd{
+text-decoration: none;
+color: black;
+}
+
+.letterboxd:hover{
+cursor: pointer;
+color: black;
+-webkit-text-fill-color: white;
+-webkit-text-stroke: 0.4px;
+
+}
+.images-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; 
+}
+
+.me3 {
+  width:70%;
+  margin-left: 5vw;
+  height: auto;
+  filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+}
+
+.clips {
+  position: relative;
+  width:10%;
+  right: 8vw;
+  height: auto;
+  filter: drop-shadow(0 0 0.30rem rgb(65, 64, 64));
+  z-index: 10;
+}
+.clips-two {
+  position: relative;
+  width:5%;
+  bottom: 10vh;
+  right: 30vw;
+  height: auto;
+  filter: drop-shadow(0 0 0.30rem rgb(65, 64, 64));
+  z-index: 10;
+}
+
+/*FOOTER*/
+.footer {
+  display: flex;
+  justify-content: center;
+  font-family: Name-two;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  position: fixed;
+  left: 0;
+  bottom: 8vh;
+  width: 100%;
+  color: black;
+  text-align: center;
+  word-spacing: 76vw;
+}
+
+.background-overlay {
+  display: none;
+  position: fixed;
+  top: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 998;
+  cursor: pointer;
+}
+
+.project-plus {
+  display: none;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%;
+  height: auto;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  gap: 3rem;
+  margin: 1%; 
+  top: -3vh;
+}
+
+.project-plus h1{
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay-image {
+  filter: drop-shadow(0 0 0.20rem rgb(163, 163, 163));
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+
+.overlay-title{
+color:white; 
+display: flex;
+ justify-content: center; 
+align-items: center; 
+}
+
+.overlay-image:hover {
+  transform: scale(1.3);
+}
+
+@media only screen and (max-width:600px), (min-wdth:600px) {
+
+.navigation-item a{
+  font-size: 0.75rem
+}
+
+
+.navigation-item{
+  gap: 5vw;
+}
+
+.images-wrapper{
+  margin-bottom: 15vh;
+}
+
+.intro{
+  font-size: 0.85rem;
+  width:80%
+}
+
+.me, .me2{
+  width:65%;
+}
+
+.print-marks-one, .print-marks-two,
+.print-marks-three, .print-marks-four {
+  width: 7%;
+  height: auto;
+}
+
+.print-marks-five, .print-marks-six,
+.print-marks-seven, .print-marks-eight {
+  width: 4.5%;
+  height: auto;
+}
+
+.print-marks-five{
+  top: 5.5%;
+  left: 8%;
+}
+
+.print-marks-six{
+  top: 5.5%;
+  right: 8%;
+}
+
+.print-marks-seven{
+  bottom: 2.5%;
+  left: 8%;
+}
+.print-marks-eight{ 
+  bottom: 2%;
+  right: 8%;
+}
+.footer{
+  font-size: 0.6rem;
+  word-spacing: 80vw;
+}
+
+.scroll-down-for-more{
+  bottom: 18vh;
+  
+}
+
+.scroll-text{
+  font-size: 0.8rem;
+
+}
+
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem; 
+
+  }
+
+  .image-hover-container {
+    width: 60%; /* slightly smaller for margin around */
+    padding-top: 10%; /* reduce aspect ratio from 70% to 50% */
+    margin: 0; /* ensure no extra spacing */
+  }
+
+  .image-hover-container img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+
+
+  /* Reset unwanted offsets/margins */
+  .project-one-pic-one,
+  .project-one-pic-two,
+  .project-two-pic-one,
+  .project-two-pic-two,
+  .project-three-pic-one,
+  .project-three-pic-two,
+  .project-four-pic-one,
+  .project-four-pic-two {
+
+    position: relative;
+  }
+
+  .project-one-pic-one,  .project-one-pic-two{
+   top:-17vh;
+  }
+
+  .project-two-pic-one,  .project-two-pic-two{
+    top:-10vh;
+
+   }
+  
+  .project-three-pic-one, .project-three-pic-two{
+    right: 3.5rem;
+    top: -20vh;
+  }
+
+  .project-four-pic-one, .project-four-pic-two{
+    left: 3rem;
+    top:-9.7vh;
+  }
+
+  .description-one{
+    width : 80%;
+    font-size: 0.7rem;
+  }
+}
+
+
