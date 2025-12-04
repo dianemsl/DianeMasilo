@@ -167,6 +167,7 @@
 
 
        <div class="scroll-down-for-more">
+  
       </div>
 
 
@@ -241,40 +242,53 @@
               "projects/project-two/fourth-page.webp",
               "projects/project-two/third-page.webp",
               "projects/project-two/first-page.webp",
+              "projects/project-two/seventh-page.webp",
+              "projects/project-two/ninth-page.webp",
               
             ],
 
-            imageWidth: "27%",
-            title: "This is a picture I had to take.",
+            imageWidth: "24%",
+    
           },
           2: {
             images: [
-              "projects/project-one/sixth-page.webp",
-              "projects/project-one/third-page.webp",
-              "projects/project-one/fourth-page.webp",
+              "projects/project-one/one.webp",
+              "projects/project-one/two.webp",
+              "projects/project-one/three.webp",
+              "projects/project-one/four.webp",
+              "projects/project-one/five.webp",
+              "projects/project-one/six.webp",
+          
 
 
-            ],
-
-            imageWidth: "30%", maxWidth: "50%"
+            ]
+            ,imageWidth: "32%", maxWidth: "50%"
       
           },
           3: {
             images: [
-              "projects/project-four/livret.webp",
-              "projects/project-four/livret-open.webp"
+              "projects/project-four/one.webp",
+              "projects/project-four/two.webp",
+              "projects/project-four/three.webp",
+          
             ],
+
+            imageWidth: "30%", maxWidth: "50%"
 
           },
           4: {
             images: [
-              "projects/project-three/open.webp", 
-              "projects/project-three/first-open.webp",
-              "projects/project-three/second-open.webp",
+              "projects/project-three/one.webp", 
+              "projects/project-three/two.webp", 
+              "projects/project-three/three.webp",  
+              "projects/project-three/four.webp", 
+              "projects/project-three/five.webp",
+              
+  
         
             ],
 
-            imageWidth: "30%", maxWidth: "50%"
+            imageHeight: "40vh", maxWidth: "50%"
 
         
 
@@ -313,6 +327,7 @@
               }
               media.classList.add('overlay-image');
               media.style.width = project.imageWidth; 
+              media.style.height = project.imageHeight;
               projectPlus.appendChild(media);
   
             });
