@@ -89,8 +89,8 @@
         <div class="project-container">
               <div class="image-hover-container" >
 
-                 <img ondblclick="doubleClick()" class="project-one-pic-one"  src="projects/project-two/front-cover.webp" alt="this-is-a-picture-i-had-to-take" >
-                 <img ondblclick="doubleClick()"  class="project-one-pic-two" src="projects/project-two/open-first-page.webp" alt="this-is-a-picture-i-had-to-take">
+                 <img onclick="click()" class="project-one-pic-one"  src="projects/project-two/front-cover.webp" alt="this-is-a-picture-i-had-to-take" >
+                 <img onclick="click()"  class="project-one-pic-two" src="projects/project-two/open-first-page.webp" alt="this-is-a-picture-i-had-to-take">
 
                 </div>
 
@@ -288,7 +288,8 @@
         
             ],
 
-            imageHeight: "40vh", maxWidth: "50%"
+           
+            imageWidth: "30%", imageHeight: "38vh", maxWidth: "50%"
 
         
 
@@ -304,7 +305,7 @@
         
 
         document.querySelectorAll('.image-hover-container').forEach((container, index) => {
-          container.addEventListener('dblclick', () => {
+          container.addEventListener('click', () => {
             overlay.style.display = "block";
             projectPlus.style.display = "flex";
             projectPlus.innerHTML = ""; 
@@ -336,8 +337,8 @@
         });
         
 
-        overlay.addEventListener('dblclick', hideOverlay);
-        projectPlus.addEventListener('dblclick', hideOverlay);
+        overlay.addEventListener('click', hideOverlay);
+        projectPlus.addEventListener('click', hideOverlay);
         document.addEventListener('keydown', e => {
           if (e.key === "Escape") hideOverlay();
         });

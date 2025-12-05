@@ -669,8 +669,12 @@ color: black;
 }
 
 .intro{
-  font-size: 0.85rem;
-  width:80%
+  font-size: 0.8rem;
+  width:190%;
+  margin-bottom:10vh;
+  margin-right: 10vw;
+  text-align: center;
+  justify-content: center;
 }
 
 .me {
@@ -679,50 +683,55 @@ color: black;
 
 .print-marks-one, .print-marks-two,
 .print-marks-three, .print-marks-four {
-  width: 7%;
+  width: 6%;
   height: auto;
 }
 
 .print-marks-five, .print-marks-six,
 .print-marks-seven, .print-marks-eight {
-  width: 4.5%;
+  width: 3.5%;
   height: auto;
 }
 
 .print-marks-five{
-  top: 5.5%;
-  left: 8%;
+  top: 5%;
+  left: 6%;
 }
 
 .print-marks-six{
-  top: 5.5%;
-  right: 8%;
+  top: 5%;
+  right: 6%;
 }
 
 .print-marks-seven{
-  bottom: 2.5%;
-  left: 8%;
+  bottom: 2%;
+  left: 6%;
 }
 .print-marks-eight{ 
-  bottom: 2%;
-  right: 8%;
+  bottom: 1.5%;
+  right: 6%;
 }
 .footer{
-  font-size: 0.6rem;
-  word-spacing: 80vw;
+  font-size: 0.5rem;
+  bottom: 2vh;
+  word-spacing: 45vw;
 }
 
 .scroll-down-for-more{
-  bottom: 18vh;
+  bottom: 15vh;
   
+}
+
+
+.overlay-text{
+  font-size: 0.7rem;
+  bottom: 1vh;
 }
 
 .scroll-text{
   font-size: 0.8rem;
 
 }
-
-
   .projects {
     display: flex;
     flex-direction: column;
@@ -750,29 +759,68 @@ color: black;
     position: relative;
   }
 
-  .project-one-pic-one,  .project-one-pic-two{
-   top:-17vh;
-  }
-
-  .project-two-pic-one,  .project-two-pic-two{
-    top:-10vh;
-
-   }
-  
-  .project-three-pic-one, .project-three-pic-two{
-    right: 3.5rem;
-    top: -20vh;
-  }
-
-  .project-four-pic-one, .project-four-pic-two{
-    left: 3rem;
-    top:-9.7vh;
-  }
-
   .description-one{
     width : 80%;
     font-size: 0.7rem;
   }
+
+  .project-one-pic-one{
+    width: 120%;
+    max-width:100%;
+    top:-10.25vh;
+    right: 60vw;
+}
+
+.project-one-pic-two{
+  width: 120%;
+  max-width:100%;
+  top:-10.25vh;
+  right: 60vw;
+}
+
+.project-two-pic-one{
+  width: 200%;
+  max-width:200%;
+  top: 10vh;
+  right: 15vw;
+}
+
+.project-two-pic-two{
+  width: 200%;
+  max-width:200%;
+  top: 10vh;
+  right: 15vw;
+
+}
+
+.project-three-pic-one{
+  width: 120%;
+  max-width:105%;
+  top: -48vh;
+  right: 5vw;
+}
+
+.project-three-pic-two{
+width: 120%;
+max-width:105%;
+top: -48vh;
+right: 5vw;
+}
+
+.project-four-pic-one{
+  width: 110%;
+  max-width:110%;
+  top: 7vh;
+  right: 70vw;
+}
+
+.project-four-pic-two{
+  width: 110%;
+  max-width:110%;
+  top: 8vh;
+  right: 70vw;
+}
+
 }
 
 
