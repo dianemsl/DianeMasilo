@@ -89,7 +89,7 @@ header {
   }
 
   .section {
-    height: 100vh;
+    height: 100svh;
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -128,7 +128,7 @@ header {
     text-transform:uppercase;
     left: 6vw;
     bottom: 33vh;
-    width: 80%;
+    width: 100%;
     font-family: Main;
     letter-spacing: 0.05rem;
     line-height: 1;
@@ -473,6 +473,70 @@ header {
   user-select: none;
 }
 
+.project-six-pic-one{
+  position: absolute;
+  width: 100%;
+  max-width: 36%;
+  top: -20.5vh;
+  opacity: 1;
+  right: 73vw;
+  transition: opacity 0.2s ease;
+
+}
+
+.project-six-pic-two{
+  position: absolute;
+  width: 100%;
+  max-width: 36%;
+  top: -20.5vh;
+  opacity: 0;
+  right: 73vw;
+}
+
+.image-hover-container:hover .project-six-pic-one {
+  opacity: 0;
+  cursor: help;
+}
+
+.image-hover-container:hover .project-six-pic-two {
+  opacity: 1;
+  cursor: help;
+  user-select: none;
+  filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64)); 
+}
+
+.project-seven-pic-one{
+  position: absolute;
+  width: 100%;
+  max-width: 23%;
+  height: auto;
+  top: -20vh;
+  opacity: 1;
+  right: 55vw;
+}
+
+.project-seven-pic-two{
+  position: absolute;
+  width: 100%;
+  max-width: 23%;
+  right: 55vw;
+  top: -20vh;
+  opacity: 0;
+}
+
+.image-hover-container:hover .project-seven-pic-one {
+  opacity: 0;
+  cursor: help;
+  user-select: none;
+}
+
+.image-hover-container:hover .project-seven-pic-two {
+  opacity: 1;
+  cursor: help;
+  user-select: none;
+  filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+}
+
 
 /*ABOUT*/
 
@@ -484,7 +548,6 @@ header {
   height: auto;
   filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
 }
-
 
 .about-description{
   position: relative;
@@ -608,7 +671,7 @@ color: black;
   top: 0; 
   width: 100vw; 
   height: 100vh;
-  background:rgba(255, 255, 255, 0.778);;
+  background:rgba(22, 22, 22, 0.778);;
   z-index: 997;
 
 }
@@ -652,6 +715,8 @@ color: black;
   text-transform: uppercase;
   font-size: 0.8rem;
 }
+
+
 
 @media only screen and (max-width:600px), (min-wdth:600px) {
 
@@ -746,6 +811,7 @@ color: black;
     padding-top: 10%; 
     margin: 0; 
   }
+
   
   .project-one-pic-one,
   .project-one-pic-two,
@@ -824,3 +890,208 @@ right: 5vw;
 }
 
 
+/*IMAC SCREENS*/
+
+@media only screen and (min-device-width:1600px)
+
+
+{
+
+
+  .intro {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+
+
+  .title{
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-left: 2vw;
+    width: 100%;
+    font-family: Main-two ;
+    text-transform:uppercase;
+    z-index: 10;
+  
+  }
+  
+  .description{
+    font-size: 1.4rem;
+    line-height: 1.1;
+    width: 100%;
+    font-family: Main;
+    text-transform: uppercase;
+  
+  }
+
+  .project-text {
+    position: absolute;
+    top: 30vh;  
+    right: 53vw; 
+    width: 60%;
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+  }
+
+  .footer {
+     font-size: 0.8rem;
+
+}
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; 
+  }
+
+  .image-hover-container {
+    width: 23%;  
+    margin: 0; 
+  }
+  
+  .project-one-pic-one{
+    width: 70%;
+    max-width:100%;
+    top:-13.25vh;
+    right: 60vw;
+    
+}
+
+.project-one-pic-two{
+  width: 60%;
+  max-width:100%;
+  top:-13.25vh;
+  right: 60vw;
+}
+
+.project-two-pic-one{
+  width: 60%;
+  max-width:200%;
+  top: -17.25vh;
+  right: -10vw;
+}
+
+.project-two-pic-two{
+  width: 60%;
+  max-width:200%;
+  top: -17.25vh;
+  right: -10vw;
+
+}
+
+.project-three-pic-one{
+  width: 60%;
+  max-width:105%;
+  top: -31vh;
+  right: 26vw;
+}
+
+.project-three-pic-two{
+  width: 60%;
+max-width:105%;
+top: -31vh;
+right: 26vw;
+}
+
+.project-four-pic-one{
+  width: 60%;
+  max-width:110%;
+  top: -4.5vh;
+  right: 20vw;
+}
+
+.project-four-pic-two{
+  width: 60%;
+  max-width:110%;
+  top: -4.5vh;
+  right: 20vw;
+}
+
+.overlay-text {
+  font-size: 0.9rem;
+}
+
+.project-six-pic-one{
+  position: absolute;
+  width: 110%;
+  max-width: 110%;
+  top: -18.5vh;
+  opacity: 1;
+  right: 60vw;
+  transition: opacity 0.2s ease;
+
+}
+
+.project-six-pic-two{
+  position: absolute;
+  width: 110%;
+  max-width: 110%;
+  top: -18.5vh;
+  opacity: 0;
+  right: 60vw;
+}
+
+
+.project-seven-pic-one{
+  position: absolute;
+  width: 100%;
+  max-width: 72.5%;
+  height: auto;
+  top: -21.5vh;
+  opacity: 1;
+  right: 40vw;
+}
+
+.project-seven-pic-two{
+  position: absolute;
+  width: 100%;
+  max-width: 72.5%;
+  right: 40vw;
+  top: -21.5vh;
+  opacity: 0;
+}
+
+.description-me{
+  position: relative;
+  width : 60%;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: Main;
+  line-height: 1.2;
+  right:7vw;
+}
+
+.info-title{
+  position: relative;
+  width : 90%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: Main-two;
+  line-height: 1.2;
+  right:6vw;
+  top: 21vh;
+}
+
+.info-me{
+  position: relative;
+  width : 80%;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-family: Main;
+  line-height: 1.2;
+  right:7vw;
+  top: 21vh;
+}
+
+.me2 {
+  width:25%;
+  margin-bottom: 14.5vh;
+  margin-left: 27vw;
+  height: auto;
+  filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+}
+  
+}
