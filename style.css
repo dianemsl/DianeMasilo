@@ -32,6 +32,8 @@ html, body{
     max-width: 100%;
     overflow-x: hidden;
     z-index: 998;
+    height: 100%;
+    scroll-snap-type: y mandatory;
 }
 
 header {
@@ -41,36 +43,39 @@ header {
 /*NAVIGATION BAR*/
 .navigation{
     width: 100%;
-    padding-top:0.6%;
-    padding-bottom: 0.2%;
+    height: 64px;  
+    padding-top:0.5%;
+    padding-bottom: 0.8%;
     z-index: 3;
-    background-color:white;
     position: fixed;
     top: 0px;
     overflow-y: hidden;
-    z-index: 997;
+ 
+
+
 }
 
 .navigation-item{
   display: flex;
   justify-content: center;
-  gap: 32.8vw;
+  gap: 19vw;
+  z-index: 1;
+ /* border-bottom: 1px solid black;*/
+ z-index: 10000;
+
   
 }
 
 .navigation-item a{
-   font-size: 1.3rem;
+   font-size: 0.9rem;
    letter-spacing: 1px;
-   font-family: Navigation;
+   font-family:Navigation;
    text-decoration: none;
    color: black;
    word-wrap: normal;
    text-transform: uppercase;
    line-height: 1.5;
    
-
-
-
 }
 
 .navigation-item a:hover{
@@ -121,17 +126,32 @@ header {
     margin-top: 2rem;
   }
   
-  .intro {
+  .intro-one {
     display: inline;
-    font-size: 1.2rem;
-    position: relative;
-    text-transform:uppercase;
-    left: 6vw;
-    bottom: 33vh;
-    width: 100%;
-    font-family: Main;
+    font-size: 1.5rem;
+    position: fixed;
+    text-transform:none;
+    left: 12.5vw;
+    top:16vh;
+    width: 200%;
+    font-family: Main-two;
     letter-spacing: 0.05rem;
-    line-height: 1;
+    line-height: 1.05;
+    color:black;
+    cursor: default;
+  }
+
+  .intro-two {
+    display: inline;
+    font-size: 1.5rem;
+    position: fixed;
+    text-transform:none;
+    left: 51vw;
+    top:16.55vh;
+    width: 200%;
+    font-family: Main-two;
+    letter-spacing: 0.05rem;
+    line-height: 1.05;
     color:black;
     cursor: default;
   }
@@ -144,25 +164,21 @@ header {
   }
   
 /*PRINT-MARKS-*/
-
 .print-marks-one, .print-marks-two,
 .print-marks-three, .print-marks-four {
   display: flex;
   position: fixed;
   width: 2.5%;
   height: auto;
-
-
-
 }
 
   .print-marks-one{
     bottom: 2%;
     right: 0;
     margin: 0.5%;
-    
-    
+
   }
+
   .print-marks-two{
     bottom: 2%;
     left: 0;
@@ -188,8 +204,6 @@ header {
     position: fixed;
     width: 1.5%;
     height: auto;
-
-
   }
 
   .print-marks-five{
@@ -211,13 +225,51 @@ header {
     right: 3%;
   }
 
+
+  .book {
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: rgba(255,255,255,0.6);
+    filter: blur(1px);
+    overflow: hidden;
+
+}
+.left {
+    box-shadow: 6px 0 2px 1px rgb(124, 123, 123), -8px 0 6px grey inset;
+    left: 0;
+    height: 100%;
+    filter: blur(5px);
+}
+
+.right {
+    right: 0;
+    height: 100%;
+}
+.page {
+    background: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    box-sizing: border-box;
+
+}
+
+
   .scroll-down-for-more{
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
     text-align: center;
-    bottom: 5vh;
+    bottom: 9vh;
   }
 
   .scroll-text{
@@ -233,34 +285,38 @@ header {
 .projects{
     display: flex;
     width: 100%;
+    top:-8vh;
     position: relative;
     margin: auto;
     z-index:10;
-
+    align-items:baseline /* same height baseline */
 }
 
 .image-hover-container {
     display: flex;
     position: absolute;
+    align-items: center;
     width: 100%;
     margin: 0 auto;
     user-select: none;
     will-change: transform;
+
   }
 
 .image-hover-container img {
+  display: flex;
     position: absolute;
-    width: fit-content;
+    width: 100%;
     height: auto;
     transition: opacity 0.15s ease;
-    display: block;   
+    display: block; 
 }
 
 
 .project-text {
   position: absolute;
-  top: 25vh;  
-  right: 38vw; 
+  top: 33vh;  
+  right: 37vw; 
   width: 110%;
   opacity: 0;
   transition: opacity .2s ease;
@@ -273,21 +329,21 @@ header {
 
 
 .title{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.2;
   margin-left: 2vw;
   width: 100%;
   font-family: Main-two ;
-  text-transform:uppercase;
+  text-transform:none;
   z-index: 10;
 
 }
 
 .description{
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.1;
-  width: 85%;
-  font-family: Main;
+  width: 70%;
+  font-family: Main-two;
   text-transform: uppercase;
 
 }
@@ -296,13 +352,57 @@ header {
   opacity: 1;
 }
 
+.number-zero {
+  font-family: Navigation;
+  font-size: 0.8rem;
+  position: relative;
+  margin-top: -0.2rem;
+  left:8.5vw;
+  text-align: center;
+  color: black;
+}
+
+
+.number-one {
+  font-family: Navigation;
+  font-size: 0.8rem;
+  position: relative;
+  margin-top: 0.5rem;
+  top:22.5vh;
+  right:29.5vw;
+  text-align: center;
+  color: black;
+}
+.number-two {
+  font-family: Navigation;
+  font-size: 0.8rem;
+  position: relative;
+  margin-top: 0.5rem;
+  top:22.5vh;
+  right:11.5vw;
+  text-align: center;
+  color: black;
+}
+
+.number-three {
+  font-family: Navigation;
+  font-size: 0.8rem;
+  position: relative;
+  margin-top: 0.5rem;
+  top:22.5vh;
+  left: 35.5vw;
+  text-align: center;
+  color: black;
+}
+
+
 /*PROJECT-ONE*/
 
 .project-one-pic-one{
     position: absolute;
     width: 100%;
+    height: 100vh;
     max-width: 31%;
-    top: -14.5vh;
     opacity: 1;
     right: 77vw;
     transition: opacity 0.2s ease;
@@ -312,8 +412,8 @@ header {
 .project-one-pic-two{
     position: absolute;
     width: 100%;
+    height: 100vh;
     max-width: 31%;
-    top: -14.5vh;
     opacity: 0;
     right: 77vw;
 }
@@ -330,24 +430,25 @@ header {
     filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64)); 
 }
 
+
 /*PROJECT-TWO*/
 
 .project-two-pic-one{
     position: absolute;
     width: 100%;
+    height: 100vh;
     max-width: 63%;
     height: auto;
-    top: -16.5vh;
     opacity: 1;
-    right: 6vw;
+    right: 12vw;
 }
 
 .project-two-pic-two{
     position: absolute;
     width: 100%;
+    height: 100vh;
     max-width: 63%;
-    right: 6vw;
-    top: -16.5vh;
+    right: 12vw;
     opacity: 0;
 }
 
@@ -364,14 +465,19 @@ header {
     filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
 }
 
+
+
+
+
+
 /*PROJECT-THREE*/
 
 .project-three-pic-one{
     position: relative;
     width: 100%;
-    max-width: 33%;
+    height: 100vh;
+    max-width: 31%;
     height: auto;
-    top: -25.2vh;
     right:44vw;
     opacity: 1;
     margin-right: 15vw;
@@ -380,9 +486,9 @@ header {
 .project-three-pic-two{
     position: relative;
     width: 100%;
-    max-width: 33%;
+    height: 100vh;
+    max-width: 31%;
     height: auto;
-    top: -25.2vh;
     right:44vw;
     opacity: 0;
     margin-right: 15vw;
@@ -402,27 +508,26 @@ header {
 }
 
 
+
 /*PROJECT-FOUR*/
 
 .project-four-pic-one{
     position: relative;
     width: 100%;
-    max-width:37%;
+    max-width:33%;
     height: auto;
     opacity: 1;
-    top:-2vh;
-    right: 38vw;
+    right: 40vw;
 
 }
 
 .project-four-pic-two{
     position: relative;
     width: 100%;
-    max-width:37%;
+    max-width:33%;
     height: auto;
     opacity: 0;
-    top:-2vh;
-    right: 38vw;
+    right: 40vw;
 
 }
 
@@ -438,6 +543,8 @@ header {
     filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
     user-select: none;
 }
+
+
 
 .project-five-pic-one{
   position: relative;
@@ -542,9 +649,9 @@ header {
 
 
 .me2 {
-  width:35%;
-  margin-bottom: 20vh;
-  margin-left: 20vw;
+  width:50%;
+  margin-left: 9vw;
+  margin-top: 28vh;
   height: auto;
   filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
 }
@@ -557,13 +664,24 @@ header {
 
 .description-me{
   position: relative;
-  width : 80%;
+  width : 70%;
   font-size: 1.2rem;
   text-transform: uppercase;
   font-family: Main;
-  line-height: 1.2;
-  right:10vw;
-  top:3vh;
+  line-height: 1;
+  right: 35vw;
+  top:-1vh;
+}
+
+.description-me-two{
+  position: relative;
+  width : 70%;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: Main;
+  line-height: 1;
+  left: 8vw;
+  top:2vh;
 }
 
 .info-title{
@@ -573,7 +691,7 @@ header {
   text-transform: uppercase;
   font-family: Main-two;
   line-height: 1.2;
-  right:10vw;
+  left: 8vw;
   top: 21vh;
 }
 
@@ -584,50 +702,10 @@ header {
   text-transform: uppercase;
   font-family: Main;
   line-height: 1.2;
-  right:11.5vw;
+  left: 8vw;
   top: 21vh;
 }
 
-
-.resume{
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  bottom: 20vh;
-  z-index: 10;
-  
-}
-
-.resume-button{ 
-  font-family: Main;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color:black;
-  padding: 0.5%;
-  border-radius: 1px;
-  text-decoration: none;
-  border: none; 
-  position: relative;
-  cursor: pointer;
-  background-color: white;
-  opacity: 1;
-  background: linear-gradient(currentColor 0 0) 
-bottom left/
-var(--underline-width, 0%) 0.12em
-no-repeat;
-transition: background-size 0.35s;
-  justify-content: center;
-}
-
-.resume-button:hover{
-cursor: pointer;
---underline-width: 100%;
--webkit-text-fill-color: white;
--webkit-text-stroke: 0.4px;
-transition: 0.35s;
-}
 
 .letterboxd{
 text-decoration: none;
@@ -671,25 +749,34 @@ color: black;
   top: 0; 
   width: 100vw; 
   height: 100vh;
-  background:rgba(22, 22, 22, 0.778);;
-  z-index: 997;
+  background:rgba(9, 9, 9, 0.552);
+  backdrop-filter: blur(10px);
+  z-index: 9000;
 
 }
 
+.black-square {
+  display: flex;
+  position: relative;
+  left: 3vw;
+  top:10vh;
+  flex-wrap: wrap;
+  height: 86vh;
+  width: 94vw;
+  background-color: rgb(0, 0, 0);
+}
+
 .project-plus {
-  display: none;
-  justify-content: center; 
-  align-items: center; 
-  align-content: flex-start;
-  width: 100%;
-  height: auto;
   position: fixed;
   inset: 0;
-  z-index: 998;
-  flex-wrap: wrap;  
-  top:10vh;
+  display: none;
+  justify-content: center;
+  padding-top: env(safe-area-inset-top, 8vh);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  z-index: 9500;
   line-height: 0;
-  gap: -0.5rem ;  
+  gap: 3.5rem;
   cursor: alias;
 }
 
@@ -697,13 +784,14 @@ color: black;
   transition: transform 0.2s ease;
   will-change: transform;
   height: auto;
+  max-height: calc(100dvh - 12rem);
+  object-fit: contain;
 }
 
 .overlay-image:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   cursor:crosshair;
 }
-
 
 
 .overlay-text {
@@ -713,7 +801,7 @@ color: black;
   color: black;
   font-family: Main;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 
 
@@ -721,12 +809,12 @@ color: black;
 @media only screen and (max-width:600px), (min-wdth:600px) {
 
 .navigation-item a{
-  font-size: 0.75rem
+  font-size: 1rem
 }
 
 
 .navigation-item{
-  gap: 5vw;
+  gap: 16vw;
 }
 
 .images-wrapper{
@@ -783,14 +871,11 @@ color: black;
 }
 
 .scroll-down-for-more{
-  bottom: 15vh;
-  
+  bottom: 7vh; 
 }
 
-
 .overlay-text{
-  font-size: 0.7rem;
-  bottom: 1vh;
+  font-size: 0.5rem;
 }
 
 .scroll-text{
@@ -825,70 +910,7 @@ color: black;
     position: relative;
   }
 
-  .description-one{
-    width : 80%;
-    font-size: 0.7rem;
-  }
-
-  .project-one-pic-one{
-    width: 120%;
-    max-width:100%;
-    top:-10.25vh;
-    right: 60vw;
 }
-
-.project-one-pic-two{
-  width: 120%;
-  max-width:100%;
-  top:-10.25vh;
-  right: 60vw;
-}
-
-.project-two-pic-one{
-  width: 200%;
-  max-width:200%;
-  top: 10vh;
-  right: 15vw;
-}
-
-.project-two-pic-two{
-  width: 200%;
-  max-width:200%;
-  top: 10vh;
-  right: 15vw;
-
-}
-
-.project-three-pic-one{
-  width: 120%;
-  max-width:105%;
-  top: -48vh;
-  right: 5vw;
-}
-
-.project-three-pic-two{
-width: 120%;
-max-width:105%;
-top: -48vh;
-right: 5vw;
-}
-
-.project-four-pic-one{
-  width: 110%;
-  max-width:110%;
-  top: 7vh;
-  right: 70vw;
-}
-
-.project-four-pic-two{
-  width: 110%;
-  max-width:110%;
-  top: 8vh;
-  right: 70vw;
-}
-
-}
-
 
 /*IMAC SCREENS*/
 
