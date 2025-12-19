@@ -896,7 +896,7 @@ color: black;
     width: 150%;
     left: 20vw;
     gap: 10vw;
-    top: 8vh;
+
 
 }
 
@@ -1026,6 +1026,26 @@ color: black;
   margin-top: 30vh;
   height: auto;
   filter: drop-shadow(0 0 0.20rem rgb(65, 64, 64));
+}
+
+.project-plus {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  padding-top: env(safe-area-inset-top, 8vh);
+  align-items: flex-start;
+  flex-wrap: wrap;
+  z-index: 9500;
+  line-height: 0;
+  gap: 1rem;
+  cursor: alias;
+}
+
+.overlay-image {
+  width: 30vw !important;
+  max-width: 90vw;
+  max-height: 70vh;
 }
 
 }
